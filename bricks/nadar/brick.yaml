@@ -1,0 +1,16 @@
+name: nadar
+description: Makes it easy to create features with a clean architecture
+
+repository: https://github.com/yusufnadar/mason_nadar
+
+version: 0.0.3
+
+environment:
+  mason: ^0.1.0
+
+vars:
+  feature_name:
+    type: string
+    description: The feature name
+    default: new_feature
+    prompt: What is the feature name?
