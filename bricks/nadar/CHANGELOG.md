@@ -9,3 +9,7 @@
 # 0.0.3
 
 - 🎉: Folder structure changed
+
+# 0.0.4
+
+- 🎉: lib/features folder rule removed

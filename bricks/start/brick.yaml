@@ -1,0 +1,9 @@
+name: start
+description: A brick to create a core layer to start project quickly
+
+repository: https://github.com/yusufnadar/mason_nadar
+
+version: 0.0.5
+
+environment:
+  mason: ^0.1.0

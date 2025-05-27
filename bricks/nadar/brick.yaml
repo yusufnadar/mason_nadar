@@ -3,7 +3,7 @@ description: Makes it easy to create features with a clean architecture
 
 repository: https://github.com/yusufnadar/mason_nadar
 
-version: 0.0.3
+version: 0.0.4
 
 environment:
   mason: ^0.1.0

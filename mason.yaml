@@ -1,3 +1,5 @@
 bricks:
   nadar:
     path: bricks/nadar
+  start:
+    path: bricks/start
