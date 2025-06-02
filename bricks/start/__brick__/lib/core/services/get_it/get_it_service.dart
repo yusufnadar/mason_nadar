@@ -4,6 +4,8 @@ import 'package:get_it/get_it.dart';
 import 'package:get_storage/get_storage.dart';
 import '../../../common/data_source/user_data_source.dart';
 import '../../../common/provider/user/user_provider.dart';
+import '../../../features/home/data/data_source/home_data_source.dart';
+import '../../../features/home/presentation/view_model/home_view_model.dart';
 import '../../../features/login/data/data_source/login_data_source.dart';
 import '../../../features/login/presentation/view_model/login_view_model.dart';
 import '../firebase_analytics/firebase_analytics_service.dart';
@@ -22,4 +24,5 @@ void setupLocator() {
   getIt.registerSingleton<ThemeService>(ThemeService(getIt<LocalService>()));
   getIt.registerSingleton<UserProvider>(UserProvider(UserDataSource(getIt<NetworkService>())));
   getIt.registerFactory<LoginViewModel>(() => LoginViewModel(LoginDataSource(getIt<NetworkService>())));
+  getIt.registerFactory<HomeViewModel>(() => HomeViewModel(HomeDataSource(getIt<NetworkService>())));
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../../features/home/presentation/view/home_view.dart';
 import '../../../features/home/presentation/view_model/home_view_model.dart';
 import '../../../features/landing/presentation/view/landing_view.dart';
 import '../../../features/landing/presentation/view_model/landing_view_model.dart';
@@ -33,7 +34,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => ChangeNotifierProvider(
             create: (BuildContext context) => getIt<HomeViewModel>(),
-            child: LoginView(firstOpen: args?['firstOpen']),
+            child: HomeView(firstOpen: args?['firstOpen']),
           ),
           settings: const RouteSettings(name: AppRoutes.home),
         );

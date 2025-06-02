@@ -17,3 +17,11 @@
 # 0.0.5
 
 - 🎉: Assets and some features creating at first, also main.dart changing
+
+- # 0.0.6
+
+- 🎉: When home page start native splash removed
+
+- # 0.0.7
+
+- 🎉: Home added to get_it_service
