@@ -7,20 +7,18 @@ import '../../base/model/error_model/base_error_model.dart';
 import '../../consts/end_point/app_end_points.dart';
 import '../../consts/enum/http_type_enums.dart';
 import '../../consts/local/app_locals.dart';
-import '../local/local_service.dart';
+import '../get_it/get_it_service.dart';
+import '../storage/storage_service.dart';
 import 'helper/network_helper.dart';
 
 class NetworkService with DioMixin {
-  NetworkService(this._dio, this._localService);
-
-  final Dio _dio;
-  final LocalService _localService;
+  final _dio = Dio(BaseOptions(baseUrl: AppEndpoints.baseUrl));
+  final _storageService = getIt<StorageService>();
 
   void init() {
     _dio
       ..httpClientAdapter = HttpClientAdapter()
-      ..options = BaseOptions(baseUrl: AppEndpoints.baseUrl)
-      ..interceptors.add(InterceptorsWrapper(onError: NetworkHelper(_dio).onError));
+      ..interceptors.add(InterceptorsWrapper(onError: NetworkHelper().onError));
   }
 
   Future<Either<BaseErrorModel, T>> call<T>(
@@ -85,11 +83,10 @@ class NetworkService with DioMixin {
         queryParameters: queryParameters,
         options: Options(
           method: method,
-          headers:
-              headers ??
+          headers: headers ??
               {
                 Headers.contentTypeHeader: Headers.jsonContentType,
-                'Authorization': 'Bearer ${token ?? _localService.read(AppLocals.accessToken)}',
+                'Authorization': 'Bearer ${token ?? _storageService.read(AppLocals.accessToken)}',
               },
         ),
       );
@@ -103,11 +100,11 @@ class NetworkService with DioMixin {
           method: method,
           headers: {
             Headers.contentTypeHeader: Headers.multipartFormDataContentType,
-            'Authorization': 'Bearer ${token ?? _localService.read(AppLocals.accessToken)}',
+            'Authorization': 'Bearer ${token ?? _storageService.read(AppLocals.accessToken)}',
           },
         ),
       );
     }
-    return Right(mapper(response.data['data']));
+    return Right(mapper(response.data));
   }
 }

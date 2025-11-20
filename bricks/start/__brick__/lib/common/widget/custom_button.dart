@@ -6,8 +6,8 @@ import '../../core/consts/text_style/app_text_styles.dart';
 import '../../core/helper/extension/context.dart';
 
 class CustomButton extends StatelessWidget {
-  final Function() onTap;
   final String title;
+  final Function() onTap;
   final double? height;
   final double? width;
   final Color? backgroundColor;
@@ -16,8 +16,8 @@ class CustomButton extends StatelessWidget {
 
   const CustomButton({
     super.key,
-    required this.onTap,
     required this.title,
+    required this.onTap,
     this.height,
     this.width,
     this.backgroundColor,
@@ -39,7 +39,7 @@ class CustomButton extends StatelessWidget {
             color: borderColor ?? AppColors.transparent,
             width: 1.5,
           ),
-          color: backgroundColor ?? AppColors.primaryColor,
+          color: backgroundColor ?? AppColors.primary,
         ),
         child: Text(
           title,

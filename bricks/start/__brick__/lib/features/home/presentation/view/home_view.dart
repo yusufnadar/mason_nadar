@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import '../mixin/home_mixin.dart';
 
 class HomeView extends StatefulWidget {
-  final bool? firstOpen;
 
-  const HomeView({super.key, this.firstOpen});
+  const HomeView({super.key});
 
   @override
   State<HomeView> createState() => _HomeViewState();

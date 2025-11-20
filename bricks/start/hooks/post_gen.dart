@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'package:path/path.dart' as p;
 import 'package:mason/mason.dart';
 
 Future<void> run(HookContext context) async {
@@ -12,21 +12,28 @@ Future<void> run(HookContext context) async {
           'pub',
           'add',
           'get_it',
-          'get_storage',
+          'cached_network_image',
+          'url_launcher',
+          'uuid',
+          'toastification',
+          'share_plus',
+          'clipboard',
+          'flutter_secure_storage',
           'dio',
-          'flutter_native_splash',
+          'flutter_native_splash:2.4.0',
           'dartz',
           'flutter_svg',
           'flutter_screenutil',
           'logger',
           'provider',
-          'firebase_analytics',
-          'fluttertoast',
-          'firebase_core',
+          'mixpanel_flutter',
+          'purchases_ui_flutter:9.1.0',
+          'purchases_flutter:9.1.0',
           'envied',
           'upgrader',
           'sign_in_with_apple',
           'google_sign_in',
+          'in_app_review',
         ],
       ),
       Process.run(
@@ -38,12 +45,12 @@ Future<void> run(HookContext context) async {
           'build_runner',
           'flutter_gen_runner',
           'envied_generator',
+          'flutter_launcher_icons',
         ],
       ),
     ],
   );
   progress.complete();
-
   final progress2 = context.logger.progress('Flutter Gen and Native Splash creating');
   await addFlutterGenAndNativeSplash();
   progress2.complete();
@@ -84,6 +91,16 @@ flutter_native_splash:
   android_12:
     color: "#058071"
     image: assets/images/logo.png
+    
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path_ios: "assets/images/logo.png"
+  image_path_android: "assets/images/logo.png"
+  adaptive_icon_foreground: "assets/images/logo.png"
+  min_sdk_android: 21
+  remove_alpha_ios: true
+  adaptive_icon_background: "#ffffff"
 ''';
 
   // Dosyanın sonuna ekle

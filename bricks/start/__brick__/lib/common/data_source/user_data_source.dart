@@ -21,12 +21,4 @@ class UserDataSource {
       httpTypes: HttpTypes.get,
     );
   }
-
-  Future<Either<BaseErrorModel, void>> deleteAccount() async {
-    return await _networkService.call(
-      AppEndpoints.deleteUser,
-      mapper: (_) {},
-      httpTypes: HttpTypes.delete,
-    );
-  }
 }
