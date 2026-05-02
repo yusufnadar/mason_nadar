@@ -14,7 +14,7 @@ class AppStyles {
     return TextStyle(
       fontSize: fontSize?.sp ?? 14.sp,
       fontWeight: FontWeight.w300,
-      color: color ?? AppColors.textColor,
+      color: color ?? AppColors.textPrimary,
       height: height,
       decoration: decoration,
       decorationColor: decorationColor ?? AppColors.white,
@@ -31,7 +31,7 @@ class AppStyles {
     return TextStyle(
       fontSize: fontSize?.sp ?? 14.sp,
       fontWeight: FontWeight.w400,
-      color: color ?? AppColors.textColor,
+      color: color ?? AppColors.textPrimary,
       height: height,
       decoration: decoration,
       decorationColor: decorationColor ?? AppColors.white,
@@ -48,7 +48,7 @@ class AppStyles {
     return TextStyle(
       fontSize: fontSize?.sp ?? 14.sp,
       fontWeight: FontWeight.w500,
-      color: color ?? AppColors.textColor,
+      color: color ?? AppColors.textPrimary,
       height: height,
       decoration: decoration,
       decorationColor: decorationColor ?? AppColors.white,
@@ -65,7 +65,7 @@ class AppStyles {
     return TextStyle(
       fontSize: fontSize?.sp ?? 14.sp,
       fontWeight: FontWeight.w600,
-      color: color ?? AppColors.textColor,
+      color: color ?? AppColors.textPrimary,
       height: height,
       decoration: decoration,
       decorationColor: decorationColor ?? AppColors.white,
@@ -82,7 +82,7 @@ class AppStyles {
     return TextStyle(
       fontSize: fontSize?.sp ?? 14.sp,
       fontWeight: FontWeight.w700,
-      color: color ?? AppColors.textColor,
+      color: color ?? AppColors.textPrimary,
       height: height,
       decoration: decoration,
       decorationColor: decorationColor ?? AppColors.white,

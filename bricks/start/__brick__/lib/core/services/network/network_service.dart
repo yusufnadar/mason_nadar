@@ -86,21 +86,21 @@ class NetworkService with DioMixin {
           headers: headers ??
               {
                 Headers.contentTypeHeader: Headers.jsonContentType,
-                'Authorization': 'Bearer ${token ?? _storageService.read(AppLocals.accessToken)}',
+                'Authorization': 'Bearer ${token ?? await _storageService.read(AppLocals.accessToken)}',
               },
         ),
       );
     } else {
       response = await _dio.request(
         path,
-        data: data != null ? FormData.fromMap(data) : null,
+        data: FormData.fromMap(data ?? {}),
         cancelToken: cancelToken,
         queryParameters: queryParameters,
         options: Options(
           method: method,
           headers: {
             Headers.contentTypeHeader: Headers.multipartFormDataContentType,
-            'Authorization': 'Bearer ${token ?? _storageService.read(AppLocals.accessToken)}',
+            'Authorization': 'Bearer ${token ?? await _storageService.read(AppLocals.accessToken)}',
           },
         ),
       );

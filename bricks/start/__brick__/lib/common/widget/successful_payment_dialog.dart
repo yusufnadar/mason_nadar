@@ -27,7 +27,7 @@ class SuccessfulPaymentDialog {
                 padding: EdgeInsets.symmetric(vertical: 12.h),
                 child: Text(
                   'Your payment has been received successfully. You can start using the app.',
-                  style: AppStyles.regular(fontSize: 14, color: AppColors.grey),
+                  style: AppStyles.regular(fontSize: 14, color: AppColors.textMuted),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -35,7 +35,7 @@ class SuccessfulPaymentDialog {
               CustomButton(
                 title: 'Thanks',
                 onTap: () => getIt<RouteService>().popUntil(path: AppRoutes.home),
-                backgroundColor: AppColors.red,
+                backgroundColor: AppColors.primary,
                 textColor: AppColors.white,
               ),
               SizedBox(height: 8.h),

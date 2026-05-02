@@ -11,8 +11,8 @@ class UserProvider with ChangeNotifier {
   Future<void> getUser() async {
     final res = await _dataSource.getUser();
     return res.fold(
-          (_) {},
-          (response) {
+      (_) {},
+      (response) {
         user = response;
         notifyListeners();
       },

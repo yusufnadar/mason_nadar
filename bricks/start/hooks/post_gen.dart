@@ -31,9 +31,10 @@ Future<void> run(HookContext context) async {
           'purchases_flutter:9.1.0',
           'envied',
           'upgrader',
-          'sign_in_with_apple',
-          'google_sign_in',
           'in_app_review',
+          'intl',
+          'image_picker',
+          'camerawesome'
         ],
       ),
       Process.run(

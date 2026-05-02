@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:purchases_ui_flutter/purchases_ui_flutter.dart';
 import '../../../../core/consts/color/app_colors.dart';
-import '../mixin/subscriptions_mixin.dart';
 import '../view_model/subscriptions_view_model.dart';
 
 class SubscriptionsView extends StatefulWidget {
@@ -14,7 +13,7 @@ class SubscriptionsView extends StatefulWidget {
   State<SubscriptionsView> createState() => _SubscriptionsViewState();
 }
 
-class _SubscriptionsViewState extends State<SubscriptionsView> with SubscriptionsMixin {
+class _SubscriptionsViewState extends State<SubscriptionsView> {
   @override
   Widget build(BuildContext context) {
     final provider = context.watch<SubscriptionsViewModel>();
@@ -28,24 +27,6 @@ class _SubscriptionsViewState extends State<SubscriptionsView> with Subscription
           onRestoreCompleted: provider.onRestoreCompleted,
           onRestoreError: provider.onRestoreError,
         ),
-        /*
-        Positioned(
-          top: 20.h + MediaQuery.of(context).viewPadding.top,
-          right: 30.w,
-          child: GestureDetector(
-            onTap: getIt<RouteService>().pop,
-            child: Material(
-              borderRadius: BorderRadius.circular(18.w),
-              elevation: 2,
-              child: CircleAvatar(
-                radius: 18.w,
-                backgroundColor: AppColors.white,
-                child: Assets.icons.cross.svg(width: 20.w),
-              ),
-            ),
-          ),
-        ),
-         */
         if (provider.isLoading == true)
           Positioned.fill(
             child: Container(

@@ -24,7 +24,6 @@ class HelperInit {
     await Future.wait([
       SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]),
       MixpanelService.init(),
-      //getSubscriptions(),
     ]);
   }
 
@@ -36,25 +35,6 @@ class HelperInit {
       await Purchases.configure(PurchasesConfiguration(Env.androidPurchaseId));
     }
     AppConstants.customerInfo = await Purchases.getCustomerInfo();
-  }
-
-  static Future<void> getSubscriptions() async {
-    try {
-      final idsInOrder = ['x_weekly_subscription', 'x_yearly_subscription'];
-      final products = await Purchases.getProducts(idsInOrder, productCategory: ProductCategory.subscription);
-      if (Platform.isIOS) {
-        products.sort((a, b) => idsInOrder.indexOf(a.identifier).compareTo(idsInOrder.indexOf(b.identifier)));
-      } else {
-        products.sort(
-              (a, b) => idsInOrder
-              .indexOf(a.subscriptionOptions![0].productId)
-              .compareTo(idsInOrder.indexOf(b.subscriptionOptions![0].productId)),
-        );
-      }
-      AppConstants.subscriptions.addAll(products);
-    } catch (error) {
-      MixpanelService.track(type: EventType.getSubscriptionsError, args: {'error': error.toString()});
-    }
   }
 
   static void startApp() {

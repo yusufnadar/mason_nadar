@@ -5,6 +5,8 @@ import '../core/helper/init/helper_init.dart';
 import '../core/services/get_it/get_it_service.dart';
 import '../core/services/route/app_router.dart';
 import '../core/services/route/route_service.dart';
+import 'core/consts/color/app_colors.dart';
+import 'package:flutter/services.dart';
 
 Future<void> main() async {
   await HelperInit.init();
@@ -24,6 +26,14 @@ class MyApp extends StatelessWidget {
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
             title: AppConstants.appName,
+            theme: ThemeData(
+              scaffoldBackgroundColor: AppColors.primary,
+              fontFamily: AppConstants.fontFamily,
+              appBarTheme: AppBarTheme(backgroundColor: AppColors.primary),
+            ),
+            builder: (context, child) {
+              return AnnotatedRegion(value: SystemUiOverlayStyle.light, child: child ?? SizedBox());
+            },
             navigatorKey: getIt<RouteService>().navigatorKey,
             onGenerateRoute: AppRouter.generateRoute,
           ),

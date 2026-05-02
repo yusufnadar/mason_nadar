@@ -42,10 +42,10 @@ class CustomInput extends StatelessWidget {
             suffixIconConstraints: BoxConstraints(maxWidth: 44.w),
             contentPadding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
             isDense: true,
-            hintStyle: AppStyles.regular(fontSize: 16, color: AppColors.lightGrey),
+            hintStyle: AppStyles.regular(fontSize: 16, color: AppColors.textMuted),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.r),
-              borderSide: BorderSide(color: AppColors.lightGrey),
+              borderSide: BorderSide(color: AppColors.border),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.r),
@@ -53,15 +53,15 @@ class CustomInput extends StatelessWidget {
             ),
             focusedErrorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.r),
-              borderSide: const BorderSide(color: AppColors.red),
+              borderSide: const BorderSide(color: AppColors.error),
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.r),
-              borderSide: const BorderSide(color: AppColors.red),
+              borderSide: const BorderSide(color: AppColors.error),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.r),
-              borderSide: BorderSide(color: AppColors.lightGrey),
+              borderSide: BorderSide(color: AppColors.border),
             ),
             filled: true,
             fillColor: AppColors.white,

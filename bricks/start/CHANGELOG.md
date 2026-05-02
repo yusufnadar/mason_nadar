@@ -73,3 +73,7 @@
 - # 0.0.19
 
 - 🎉: Completely changed
+
+- # 0.0.20
+
+- 🎉: Little changes

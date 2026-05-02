@@ -23,8 +23,6 @@ mixin LandingMixin on State<LandingView> {
       await routeService.goRemoveUntil(path: AppRoutes.home);
     } else {
       await Future.delayed(const Duration(milliseconds: 300));
-
-      await storageService.write(AppLocals.firstOpen, true);
       await routeService.goRemoveUntil(path: AppRoutes.onboarding);
     }
   }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../mixin/home_mixin.dart';
 
 class HomeView extends StatefulWidget {
-
   const HomeView({super.key});
 
   @override

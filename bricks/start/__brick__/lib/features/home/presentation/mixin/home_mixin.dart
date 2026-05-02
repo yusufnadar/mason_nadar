@@ -6,6 +6,8 @@ mixin HomeMixin on State<HomeView> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(milliseconds: 300), FlutterNativeSplash.remove);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      FlutterNativeSplash.remove();
+    });
   }
 }
